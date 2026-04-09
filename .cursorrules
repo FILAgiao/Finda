@@ -1,0 +1,60 @@
+# AI 协作规则 (.cursorrules)
+
+> 这是 Claude Code 的行为准则——确保 AI 与项目体系一致
+
+## 1. 每次对话开始时
+
+- [ ] 读取 `PLAN.md` 了解项目上下文
+- [ ] 读取 `MEMORY_PALACE.md` 熟悉项目结构
+- [ ] 检查 `.claude/memory/` 中的用户偏好
+
+## 2. 规划新功能时
+
+- [ ] 在 `backlog/epics/` 创建或更新 Epic
+- [ ] 在 `backlog/stories/` 创建 Story 文档
+- [ ] 使用验收标准格式 (Given-When-Then)
+- [ ] 拆解为 `.claude/tasks/` 中的具体任务
+
+## 3. 编写代码时
+
+- [ ] 先确认关联的 Task/Story ID
+- [ ] 代码变更后更新任务状态
+- [ ] 复杂逻辑添加注释说明原因（非实现）
+- [ ] 遵循项目现有代码风格
+
+## 4. 技术决策时
+
+- [ ] 在 `decisions/` 创建 ADR 文档
+- [ ] 记录考虑的替代方案
+- [ ] 说明决策理由和后果
+- [ ] 更新 `PLAN.md` 的决策表
+
+## 5. 任务完成时
+
+- [ ] 更新 Task 状态为 ✅
+- [ ] 更新 Story 的验收标准检查项
+- [ ] 记录到 `sprints/current.md`
+- [ ] 如有教训，写入 `.claude/memory/`
+
+## 6. 禁止事项
+
+- ❌ 不要创建重复的文件/文档
+- ❌ 不要修改已有的 ADR（已接受的决策）
+- ❌ 不要将敏感信息写入文档
+- ❌ 不要在对话结束时总结已完成的操作
+
+## 7. 用户偏好
+
+根据 `.claude/memory/` 中的记录：
+- 用户熟悉编程，不需要基础概念解释
+- 偏好简洁直接的回答
+- 使用中文交流
+
+## 8. 文件命名规范
+
+```
+backlog/epics/EPIC-XXX-简短描述.md
+backlog/stories/US-XXX-简短描述.md
+decisions/ADR-XXX-简短描述.md
+sprints/YYYY-MM-DD-主题.md
+```
